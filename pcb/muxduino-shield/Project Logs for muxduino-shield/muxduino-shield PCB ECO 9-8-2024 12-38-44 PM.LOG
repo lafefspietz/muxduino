@@ -1,0 +1,324 @@
+Removed Pin From Net: NetName=NetJ2_06 Pin=J3-01
+Removed Pin From Net: NetName=NetJ2_05 Pin=J3-02
+Removed Pin From Net: NetName=NetJ2_04 Pin=J3-03
+Removed Pin From Net: NetName=NetJ2_03 Pin=J3-04
+Removed Pin From Net: NetName=NetJ2_02 Pin=J3-05
+Removed Pin From Net: NetName=NetJ2_01 Pin=J3-06
+Removed Pin From Net: NetName=NetJ1_10 Pin=J3-07
+Removed Pin From Net: NetName=NetJ1_09 Pin=J3-08
+Removed Pin From Net: NetName=NetJ1_08 Pin=J6-01
+Removed Pin From Net: NetName=NetJ1_07 Pin=J6-02
+Removed Pin From Net: NetName=NetJ1_06 Pin=J6-03
+Removed Pin From Net: NetName=NetJ1_05 Pin=J6-04
+Removed Pin From Net: NetName=NetJ5_01 Pin=J6-05
+Removed Pin From Net: NetName=NetJ5_02 Pin=J6-06
+Removed Pin From Net: NetName=NetJ5_03 Pin=J6-07
+Removed Pin From Net: NetName=NetJ5_04 Pin=J6-08
+Removed Pin From Net: NetName=NetC1_1 Pin=J7-01
+Removed Pin From Net: NetName=GND Pin=J7-02
+Removed Pin From Net: NetName=NetJ5_05 Pin=J7-04
+Removed Pin From Net: NetName=GND Pin=J9-2
+Change Component Footprint: Designator=J7 Old Footprint=SAMTEC_TSW-104-07-G-S-topside New Footprint=CUI_MJ-3536N
+Change Component Footprint: Designator=J9 Old Footprint=TSW-102-07-G-S-topside New Footprint=CUI_MJ-3536N
+Change Component Comment : Designator=J9 Old Comment=TSW-102-07-G-S New Comment=MJ-3536N
+Change Component Comment : Designator=J7 Old Comment=TSW-104-07-G-S-topside New Comment=MJ-3536N
+Change component parameters: Designator = "J7" ("J7"); Footprint = "SAMTEC_TSW-104-07-G-S-topside"; UniqueID = "\MRYNVDOR" ("\MRYNVDOR")
+Change component parameters (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MF"; Value = "{'manufacturer': u'CUI Devices'}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MP"; Value = "MJ-3536N"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Change component parameters: Designator = "J9" ("J9"); Footprint = "TSW-102-07-G-S-topside"; UniqueID = "\MORNKWZN" ("\MORNKWZN")
+Change component parameters (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MF"; Value = "{'manufacturer': u'CUI Devices'}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MP"; Value = "MJ-3536N"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=J10(SAMTEC_TSW-105-07-G-S)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Samtec Inc."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "TSW-105-07-G-S"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=R3(FP-RLR07-MFG)
+Add component (AddParameter): Name = "Case/Package"; Value = "Conformal"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Composition"; Value = "Metal Film"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact Plating"; Value = "Lead, Tin"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Diameter"; Value = "2.29mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Failure Rate"; Value = "0.001%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Features"; Value = "Military, Moisture Resistant, Weldable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Lead Diameter"; Value = "640µm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Lead Free"; Value = "Contains Lead"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Lead Length"; Value = "38.1mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Length"; Value = "7.62mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Operating Temperature"; Value = "150°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Power Dissipation"; Value = "250mW"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Military Standard"; Value = "MIL-PRF-39017"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Min Operating Temperature"; Value = "-65°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mount"; Value = "Through Hole"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "NexarPartId"; Value = "39449004"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number of Pins"; Value = "14"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number of Terminations"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Bulk"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power Rating"; Value = "250mW"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Radiation Hardening"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "REACH SVHC"; Value = "Unknown"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistance"; Value = "10kO"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "Non-Compliant"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Schedule B"; Value = "8533210090, 8533210090"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Coefficient"; Value = "100ppm/°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Termination"; Value = "Axial"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "1%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage Rating"; Value = "250V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage Rating (DC)"; Value = "250V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Width"; Value = "2.29mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Wire/Cable Diameter"; Value = "50.8µm"; VariantName = "[No Variations]"
+Added Component: Designator=U1(SIP_3570-1331_COM)
+Add component (AddParameter): Name = "Copyright"; Value = "Copyright (C) 2024 Ultra Librarian. All rights reserved."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "3570-1331-051"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mfr_Name"; Value = "Comus"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RefDes"; Value = "RefDes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "DEV"; VariantName = "[No Variations]"
+Added Component: Designator=U2(SIP_3570-1331_COM)
+Add component (AddParameter): Name = "Copyright"; Value = "Copyright (C) 2024 Ultra Librarian. All rights reserved."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "3570-1331-051"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mfr_Name"; Value = "Comus"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RefDes"; Value = "RefDes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "DEV"; VariantName = "[No Variations]"
+Added Component: Designator=U3(SIP_3570-1331_COM)
+Add component (AddParameter): Name = "Copyright"; Value = "Copyright (C) 2024 Ultra Librarian. All rights reserved."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "3570-1331-051"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mfr_Name"; Value = "Comus"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RefDes"; Value = "RefDes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "DEV"; VariantName = "[No Variations]"
+Added Component: Designator=U4(SIP_3570-1331_COM)
+Add component (AddParameter): Name = "Copyright"; Value = "Copyright (C) 2024 Ultra Librarian. All rights reserved."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "3570-1331-051"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mfr_Name"; Value = "Comus"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RefDes"; Value = "RefDes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "DEV"; VariantName = "[No Variations]"
+Added Component: Designator=U5(SIP_3570-1331_COM)
+Add component (AddParameter): Name = "Copyright"; Value = "Copyright (C) 2024 Ultra Librarian. All rights reserved."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "3570-1331-051"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mfr_Name"; Value = "Comus"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RefDes"; Value = "RefDes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "DEV"; VariantName = "[No Variations]"
+Added Component: Designator=U6(SIP_3570-1331_COM)
+Add component (AddParameter): Name = "Copyright"; Value = "Copyright (C) 2024 Ultra Librarian. All rights reserved."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "3570-1331-051"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mfr_Name"; Value = "Comus"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RefDes"; Value = "RefDes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "DEV"; VariantName = "[No Variations]"
+Added Component: Designator=U7(SIP_3570-1331_COM)
+Add component (AddParameter): Name = "Copyright"; Value = "Copyright (C) 2024 Ultra Librarian. All rights reserved."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "3570-1331-051"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mfr_Name"; Value = "Comus"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RefDes"; Value = "RefDes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "DEV"; VariantName = "[No Variations]"
+Added Component: Designator=U8(SIP_3570-1331_COM)
+Add component (AddParameter): Name = "Copyright"; Value = "Copyright (C) 2024 Ultra Librarian. All rights reserved."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "3570-1331-051"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mfr_Name"; Value = "Comus"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RefDes"; Value = "RefDes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "DEV"; VariantName = "[No Variations]"
+Added Component: Designator=U9(SIP_3570-1331_COM)
+Add component (AddParameter): Name = "Copyright"; Value = "Copyright (C) 2024 Ultra Librarian. All rights reserved."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "3570-1331-051"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mfr_Name"; Value = "Comus"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RefDes"; Value = "RefDes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "DEV"; VariantName = "[No Variations]"
+Added Component: Designator=U10(SIP_3570-1331_COM)
+Add component (AddParameter): Name = "Copyright"; Value = "Copyright (C) 2024 Ultra Librarian. All rights reserved."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "3570-1331-051"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mfr_Name"; Value = "Comus"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RefDes"; Value = "RefDes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "DEV"; VariantName = "[No Variations]"
+Added Component: Designator=U11(SIP_3570-1331_COM)
+Add component (AddParameter): Name = "Copyright"; Value = "Copyright (C) 2024 Ultra Librarian. All rights reserved."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "3570-1331-051"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mfr_Name"; Value = "Comus"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RefDes"; Value = "RefDes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "DEV"; VariantName = "[No Variations]"
+Added Component: Designator=U12(SIP_3570-1331_COM)
+Add component (AddParameter): Name = "Copyright"; Value = "Copyright (C) 2024 Ultra Librarian. All rights reserved."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "3570-1331-051"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mfr_Name"; Value = "Comus"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RefDes"; Value = "RefDes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "DEV"; VariantName = "[No Variations]"
+Added Component: Designator=U13(SIP_3570-1331_COM)
+Add component (AddParameter): Name = "Copyright"; Value = "Copyright (C) 2024 Ultra Librarian. All rights reserved."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "3570-1331-051"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mfr_Name"; Value = "Comus"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RefDes"; Value = "RefDes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "DEV"; VariantName = "[No Variations]"
+Added Component: Designator=U14(SIP_3570-1331_COM)
+Add component (AddParameter): Name = "Copyright"; Value = "Copyright (C) 2024 Ultra Librarian. All rights reserved."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "3570-1331-051"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mfr_Name"; Value = "Comus"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RefDes"; Value = "RefDes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "DEV"; VariantName = "[No Variations]"
+Added Component: Designator=U15(SIP_3570-1331_COM)
+Add component (AddParameter): Name = "Copyright"; Value = "Copyright (C) 2024 Ultra Librarian. All rights reserved."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "3570-1331-051"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mfr_Name"; Value = "Comus"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RefDes"; Value = "RefDes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "DEV"; VariantName = "[No Variations]"
+Added Component: Designator=U16(SIP_3570-1331_COM)
+Add component (AddParameter): Name = "Copyright"; Value = "Copyright (C) 2024 Ultra Librarian. All rights reserved."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "3570-1331-051"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mfr_Name"; Value = "Comus"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RefDes"; Value = "RefDes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "DEV"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=J7-1
+Added Pin To Net: NetName=GND Pin=J9-1
+Added Pin To Net: NetName=NetC1_1 Pin=J10-01
+Added Pin To Net: NetName=GND Pin=J10-02
+Added Pin To Net: NetName=NetJ5_05 Pin=J10-04
+Added Pin To Net: NetName=GND Pin=R3-2
+Added Pin To Net: NetName=NetJ2_06 Pin=U1-2
+Added Pin To Net: NetName=GND Pin=U1-3
+Added Pin To Net: NetName=NetJ1_05 Pin=U2-2
+Added Pin To Net: NetName=NetJ1_06 Pin=U3-2
+Added Pin To Net: NetName=NetJ1_07 Pin=U4-2
+Added Pin To Net: NetName=NetJ1_08 Pin=U5-2
+Added Pin To Net: NetName=NetJ1_09 Pin=U6-2
+Added Pin To Net: NetName=NetJ1_10 Pin=U7-2
+Added Pin To Net: NetName=NetJ2_01 Pin=U8-2
+Added Pin To Net: NetName=NetJ2_02 Pin=U9-2
+Added Pin To Net: NetName=NetJ2_05 Pin=U10-2
+Added Pin To Net: NetName=GND Pin=U10-3
+Added Pin To Net: NetName=NetJ2_04 Pin=U11-2
+Added Pin To Net: NetName=GND Pin=U11-3
+Added Pin To Net: NetName=NetJ2_03 Pin=U12-2
+Added Pin To Net: NetName=GND Pin=U12-3
+Added Pin To Net: NetName=NetJ5_01 Pin=U13-2
+Added Pin To Net: NetName=GND Pin=U13-3
+Added Pin To Net: NetName=NetJ5_02 Pin=U14-2
+Added Pin To Net: NetName=GND Pin=U14-3
+Added Pin To Net: NetName=NetJ5_03 Pin=U15-2
+Added Pin To Net: NetName=GND Pin=U15-3
+Added Pin To Net: NetName=NetJ5_04 Pin=U16-2
+Added Pin To Net: NetName=GND Pin=U16-3
+Change Net Color : Old Net Color=Blue New Net Color=Default
+Change Net Color : Old Net Color=Blue New Net Color=Default
+Change Net Color : Old Net Color=Blue New Net Color=Default
+Change Net Color : Old Net Color=Blue New Net Color=Default
+Change Net Color : Old Net Color=Lime New Net Color=Default
+Change Net Color : Old Net Color=Lime New Net Color=Default
+Change Net Color : Old Net Color=Lime New Net Color=Default
+Change Net Color : Old Net Color=Lime New Net Color=Default
+Change Net Color : Old Net Color=Red New Net Color=Default
+Change Net Color : Old Net Color=Red New Net Color=Default
+Change Net Color : Old Net Color=Red New Net Color=Default
+Change Net Color : Old Net Color=Red New Net Color=Default
+Change Net Color : Old Net Color=Fuchsia New Net Color=Default
+Change Net Color : Old Net Color=Fuchsia New Net Color=Default
+Change Net Color : Old Net Color=Fuchsia New Net Color=Default
+Change Net Color : Old Net Color=Fuchsia New Net Color=Default
+Added Pin To Net: NetName=NetJ3_01 Pin=J3-01
+Added Pin To Net: NetName=NetJ3_01 Pin=U9-4
+Added Net: Name=NetJ3_01
+Added Pin To Net: NetName=NetJ3_02 Pin=J3-02
+Added Pin To Net: NetName=NetJ3_02 Pin=U8-4
+Added Net: Name=NetJ3_02
+Added Pin To Net: NetName=NetJ3_03 Pin=J3-03
+Added Pin To Net: NetName=NetJ3_03 Pin=U7-4
+Added Net: Name=NetJ3_03
+Added Pin To Net: NetName=NetJ3_04 Pin=J3-04
+Added Pin To Net: NetName=NetJ3_04 Pin=U6-4
+Added Net: Name=NetJ3_04
+Added Pin To Net: NetName=NetJ3_05 Pin=J3-05
+Added Pin To Net: NetName=NetJ3_05 Pin=U5-4
+Added Net: Name=NetJ3_05
+Added Pin To Net: NetName=NetJ3_06 Pin=J3-06
+Added Pin To Net: NetName=NetJ3_06 Pin=U4-4
+Added Net: Name=NetJ3_06
+Added Pin To Net: NetName=NetJ3_07 Pin=J3-07
+Added Pin To Net: NetName=NetJ3_07 Pin=U3-4
+Added Net: Name=NetJ3_07
+Added Pin To Net: NetName=NetJ3_08 Pin=J3-08
+Added Pin To Net: NetName=NetJ3_08 Pin=U2-4
+Added Net: Name=NetJ3_08
+Added Pin To Net: NetName=NetJ6_01 Pin=J6-01
+Added Pin To Net: NetName=NetJ6_01 Pin=U1-4
+Added Net: Name=NetJ6_01
+Added Pin To Net: NetName=NetJ6_02 Pin=J6-02
+Added Pin To Net: NetName=NetJ6_02 Pin=U10-4
+Added Net: Name=NetJ6_02
+Added Pin To Net: NetName=NetJ6_03 Pin=J6-03
+Added Pin To Net: NetName=NetJ6_03 Pin=U11-4
+Added Net: Name=NetJ6_03
+Added Pin To Net: NetName=NetJ6_04 Pin=J6-04
+Added Pin To Net: NetName=NetJ6_04 Pin=U12-4
+Added Net: Name=NetJ6_04
+Added Pin To Net: NetName=NetJ6_05 Pin=J6-05
+Added Pin To Net: NetName=NetJ6_05 Pin=U13-4
+Added Net: Name=NetJ6_05
+Added Pin To Net: NetName=NetJ6_06 Pin=J6-06
+Added Pin To Net: NetName=NetJ6_06 Pin=U14-4
+Added Net: Name=NetJ6_06
+Added Pin To Net: NetName=NetJ6_07 Pin=J6-07
+Added Pin To Net: NetName=NetJ6_07 Pin=U15-4
+Added Net: Name=NetJ6_07
+Added Pin To Net: NetName=NetJ6_08 Pin=J6-08
+Added Pin To Net: NetName=NetJ6_08 Pin=U16-4
+Added Net: Name=NetJ6_08
+Added Pin To Net: NetName=NetJ7_2 Pin=J7-2
+Added Pin To Net: NetName=NetJ7_2 Pin=J7-3
+Added Pin To Net: NetName=NetJ7_2 Pin=U2-1
+Added Pin To Net: NetName=NetJ7_2 Pin=U3-1
+Added Pin To Net: NetName=NetJ7_2 Pin=U4-1
+Added Pin To Net: NetName=NetJ7_2 Pin=U5-1
+Added Pin To Net: NetName=NetJ7_2 Pin=U6-1
+Added Pin To Net: NetName=NetJ7_2 Pin=U7-1
+Added Pin To Net: NetName=NetJ7_2 Pin=U8-1
+Added Pin To Net: NetName=NetJ7_2 Pin=U9-1
+Added Net: Name=NetJ7_2
+Added Pin To Net: NetName=NetJ9_2 Pin=J9-2
+Added Pin To Net: NetName=NetJ9_2 Pin=J9-3
+Added Pin To Net: NetName=NetJ9_2 Pin=U1-1
+Added Pin To Net: NetName=NetJ9_2 Pin=U10-1
+Added Pin To Net: NetName=NetJ9_2 Pin=U11-1
+Added Pin To Net: NetName=NetJ9_2 Pin=U12-1
+Added Pin To Net: NetName=NetJ9_2 Pin=U13-1
+Added Pin To Net: NetName=NetJ9_2 Pin=U14-1
+Added Pin To Net: NetName=NetJ9_2 Pin=U15-1
+Added Pin To Net: NetName=NetJ9_2 Pin=U16-1
+Added Net: Name=NetJ9_2
+Added Pin To Net: NetName=NetJ10_03 Pin=J10-03
+Added Pin To Net: NetName=NetJ10_03 Pin=R2-1
+Added Net: Name=NetJ10_03
+Added Pin To Net: NetName=NetJ10_05 Pin=J10-05
+Added Pin To Net: NetName=NetJ10_05 Pin=R3-1
+Added Net: Name=NetJ10_05
+Added Pin To Net: NetName=NetU2_3 Pin=U2-3
+Added Pin To Net: NetName=NetU2_3 Pin=U3-3
+Added Pin To Net: NetName=NetU2_3 Pin=U4-3
+Added Pin To Net: NetName=NetU2_3 Pin=U5-3
+Added Pin To Net: NetName=NetU2_3 Pin=U6-3
+Added Pin To Net: NetName=NetU2_3 Pin=U7-3
+Added Pin To Net: NetName=NetU2_3 Pin=U8-3
+Added Pin To Net: NetName=NetU2_3 Pin=U9-3
+Added Net: Name=NetU2_3
+Change Class Name : Old Net Name=arduino-to-headers-shield New Net Name=muxduino-shield
+Added Member To Class: ClassName=muxduino-shield Member=Component J10 TSW-105-07-G-S
+Added Member To Class: ClassName=muxduino-shield Member=Component R3 100k
+Added Member To Class: ClassName=muxduino-shield Member=Component U1 3570-1331-051
+Added Member To Class: ClassName=muxduino-shield Member=Component U2 3570-1331-051
+Added Member To Class: ClassName=muxduino-shield Member=Component U3 3570-1331-051
+Added Member To Class: ClassName=muxduino-shield Member=Component U4 3570-1331-051
+Added Member To Class: ClassName=muxduino-shield Member=Component U5 3570-1331-051
+Added Member To Class: ClassName=muxduino-shield Member=Component U6 3570-1331-051
+Added Member To Class: ClassName=muxduino-shield Member=Component U7 3570-1331-051
+Added Member To Class: ClassName=muxduino-shield Member=Component U8 3570-1331-051
+Added Member To Class: ClassName=muxduino-shield Member=Component U9 3570-1331-051
+Added Member To Class: ClassName=muxduino-shield Member=Component U10 3570-1331-051
+Added Member To Class: ClassName=muxduino-shield Member=Component U11 3570-1331-051
+Added Member To Class: ClassName=muxduino-shield Member=Component U12 3570-1331-051
+Added Member To Class: ClassName=muxduino-shield Member=Component U13 3570-1331-051
+Added Member To Class: ClassName=muxduino-shield Member=Component U14 3570-1331-051
+Added Member To Class: ClassName=muxduino-shield Member=Component U15 3570-1331-051
+Added Member To Class: ClassName=muxduino-shield Member=Component U16 3570-1331-051

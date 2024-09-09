@@ -1,0 +1,52 @@
+Change Component Footprint: Designator=J1 Old Footprint=SAMTEC_TSW-104-07-G-S New Footprint=SAMTEC_TSW-105-07-G-S
+Change Component Comment : Designator=J1 Old Comment=TSW-104-07-G-S New Comment=TSW-105-07-G-S
+Change component parameters: Designator = "J1" ("J1"); Footprint = "SAMTEC_TSW-104-07-G-S"; UniqueID = "\REDKNZJD" ("\REDKNZJD")
+Change component parameters (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MF"; Value = "Samtec Inc."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MP"; Value = "TSW-105-07-G-S"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=J4(CON2_1X2_TU_TSW)
+Add component (AddParameter): Name = "Copyright"; Value = "Copyright (C) 2024 Ultra Librarian. All rights reserved."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "TSW-102-07-G-S"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mfr_Name"; Value = "Samtec Inc"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RefDes"; Value = "RefDes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "DEV"; VariantName = "[No Variations]"
+Added Component: Designator=J5(CON2_1X2_TU_TSW)
+Add component (AddParameter): Name = "Copyright"; Value = "Copyright (C) 2024 Ultra Librarian. All rights reserved."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "TSW-102-07-G-S"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mfr_Name"; Value = "Samtec Inc"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RefDes"; Value = "RefDes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "DEV"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetSW3_1 Pin=J1-05
+Added Pin To Net: NetName=NetJ1_01 Pin=NEO9-5V
+Added Pin To Net: NetName=NetJ1_01 Pin=NEO10-5V
+Added Pin To Net: NetName=NetJ1_01 Pin=NEO11-5V
+Added Pin To Net: NetName=NetJ1_01 Pin=NEO12-5V
+Added Pin To Net: NetName=NetJ1_01 Pin=NEO13-5V
+Added Pin To Net: NetName=NetJ1_01 Pin=NEO14-5V
+Added Pin To Net: NetName=NetJ1_01 Pin=NEO15-5V
+Added Pin To Net: NetName=NetJ1_01 Pin=NEO16-5V
+Added Pin To Net: NetName=NetJ1_01 Pin=R3-2
+Added Pin To Net: NetName=NetJ1_01 Pin=SW3-2
+Change Net Name : Old Net Name=NetSW3_1 New Net Name=NetJ1_05
+Added Pin To Net: NetName=NetJ2_1 Pin=J2-1
+Added Pin To Net: NetName=NetJ2_1 Pin=J4-1
+Added Net: Name=NetJ2_1
+Added Pin To Net: NetName=NetJ2_2 Pin=J2-2
+Added Pin To Net: NetName=NetJ2_2 Pin=J2-3
+Added Pin To Net: NetName=NetJ2_2 Pin=J4-2
+Added Net: Name=NetJ2_2
+Added Pin To Net: NetName=NetJ3_1 Pin=J3-1
+Added Pin To Net: NetName=NetJ3_1 Pin=J5-1
+Added Net: Name=NetJ3_1
+Added Pin To Net: NetName=NetJ3_2 Pin=J3-2
+Added Pin To Net: NetName=NetJ3_2 Pin=J3-3
+Added Pin To Net: NetName=NetJ3_2 Pin=J5-2
+Added Net: Name=NetJ3_2
+Added Pin To Net: NetName=NetNEO8_OUT Pin=NEO8-OUT
+Added Pin To Net: NetName=NetNEO8_OUT Pin=NEO16-IN
+Added Net: Name=NetNEO8_OUT
+Added Member To Class: ClassName=top-board Member=Component J4 TSW-102-07-G-S
+Added Member To Class: ClassName=top-board Member=Component J5 TSW-102-07-G-S

@@ -1,0 +1,17 @@
+Added Component: Designator=J6(SAMTEC_TSW-108-07-G-S)
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/TSW-108-07-G-S/Samtec+Inc./view-part/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Samtec Inc."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "TSW-108-07-G-S"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/TSW-108-07-G-S/Samtec+Inc./view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=J7(SAMTEC_TSW-108-07-G-S)
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/TSW-108-07-G-S/Samtec+Inc./view-part/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Samtec Inc."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "TSW-108-07-G-S"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/TSW-108-07-G-S/Samtec+Inc./view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Member To Class: ClassName=top-board Member=Component J3 MJ-3536N
+Added Member To Class: ClassName=top-board Member=Component J6 TSW-108-07-G-S
+Added Member To Class: ClassName=top-board Member=Component J7 TSW-108-07-G-S

@@ -1,0 +1,20 @@
+Added Component: Designator=J7(CON2_1X2_TU_TSW)
+Add component (AddParameter): Name = "Copyright"; Value = "Copyright (C) 2024 Ultra Librarian. All rights reserved."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "TSW-102-07-G-S"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mfr_Name"; Value = "Samtec Inc"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RefDes"; Value = "RefDes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "DEV"; VariantName = "[No Variations]"
+Added Component: Designator=J8(CON2_1X2_TU_TSW)
+Add component (AddParameter): Name = "Copyright"; Value = "Copyright (C) 2024 Ultra Librarian. All rights reserved."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "TSW-102-07-G-S"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mfr_Name"; Value = "Samtec Inc"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RefDes"; Value = "RefDes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "DEV"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetJ7_2 Pin=J7-1
+Added Pin To Net: NetName=GND Pin=J7-2
+Added Pin To Net: NetName=NetJ9_2 Pin=J8-1
+Added Pin To Net: NetName=GND Pin=J8-2
+Change Net Name : Old Net Name=NetJ7_2 New Net Name=NetJ7_1
+Change Net Name : Old Net Name=NetJ9_2 New Net Name=NetJ8_1
+Added Member To Class: ClassName=muxduino-shield Member=Component J7 TSW-102-07-G-S
+Added Member To Class: ClassName=muxduino-shield Member=Component J8 TSW-102-07-G-S
