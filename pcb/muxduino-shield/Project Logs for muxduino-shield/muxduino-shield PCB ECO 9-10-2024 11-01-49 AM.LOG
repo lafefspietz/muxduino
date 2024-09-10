@@ -1,0 +1,30 @@
+Change Component Footprint: Designator=J7 Old Footprint=CON2_1X2_TU_TSW New Footprint=CUI_MJ-3536N
+Change Component Footprint: Designator=J8 Old Footprint=CON2_1X2_TU_TSW New Footprint=CUI_MJ-3536N
+Change Component Footprint: Designator=J10 Old Footprint=SAMTEC_TSW-105-07-G-S New Footprint=SAMTEC_TSW-106-07-G-S
+Change Component Comment : Designator=J7 Old Comment=TSW-102-07-G-S New Comment=MJ-3536N
+Change Component Comment : Designator=J8 Old Comment=TSW-102-07-G-S New Comment=MJ-3536N
+Change Component Comment : Designator=J10 Old Comment=TSW-105-07-G-S New Comment=TSW-106-07-G-S
+Change component parameters: Designator = "J7" ("J7"); Footprint = "CON2_1X2_TU_TSW"; UniqueID = "\PGKHREQI" ("\PGKHREQI")
+Change component parameters (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MF"; Value = "{'manufacturer': u'CUI Devices'}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MP"; Value = "MJ-3536N"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Change component parameters: Designator = "J8" ("J8"); Footprint = "CON2_1X2_TU_TSW"; UniqueID = "\CISUKEWZ" ("\CISUKEWZ")
+Change component parameters (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MF"; Value = "{'manufacturer': u'CUI Devices'}"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MP"; Value = "MJ-3536N"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Change component parameters: Designator = "J10" ("J10"); Footprint = "SAMTEC_TSW-105-07-G-S"; UniqueID = "\CLQSJOGU" ("\CLQSJOGU")
+Change component parameters (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MF"; Value = "Samtec Inc."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MP"; Value = "TSW-106-07-G-S"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=J7-3
+Added Pin To Net: NetName=GND Pin=J8-3
+Added Pin To Net: NetName=NetC1_1 Pin=J10-06

@@ -1,0 +1,81 @@
+Removed Member From Class: ClassName=top-board Member=J6
+Removed Member From Class: ClassName=top-board Member=J7
+Change Component Footprint: Designator=J5 Old Footprint=CON2_1X2_TU_TSW New Footprint=SAMTEC_TSW-108-07-G-S
+Change Component Footprint: Designator=J3 Old Footprint=CUI_MJ-3536N New Footprint=SAMTEC_TSW-108-07-G-S
+Change Component Footprint: Designator=J1 Old Footprint=SAMTEC_TSW-105-07-G-S New Footprint=SAMTEC_TSW-106-07-G-S
+Change Component Comment : Designator=J3 Old Comment=MJ-3536N New Comment=TSW-108-07-G-S
+Change Component Comment : Designator=J5 Old Comment=TSW-102-07-G-S New Comment=TSW-108-07-G-S
+Change Component Comment : Designator=J1 Old Comment=TSW-105-07-G-S New Comment=TSW-106-07-G-S
+Change Component Designator: OldDesignator=J6 NewDesignator=J2
+Change Component Designator: OldDesignator=J7 NewDesignator=J4
+Change component parameters: Designator = "J1" ("J1"); Footprint = "SAMTEC_TSW-105-07-G-S"; UniqueID = "\BPBGOORF" ("\BPBGOORF")
+Change component parameters (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MF"; Value = "Samtec Inc."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MP"; Value = "TSW-106-07-G-S"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Change component parameters: Designator = "J3" ("J3"); Footprint = "CUI_MJ-3536N"; UniqueID = "\LWTSBTZT" ("\LWTSBTZT")
+Change component parameters (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/TSW-108-07-G-S/Samtec+Inc./view-part/?ref=eda"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MF"; Value = "Samtec Inc."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MP"; Value = "TSW-108-07-G-S"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/TSW-108-07-G-S/Samtec+Inc./view-part/?ref=snap"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Change component parameters: Designator = "J5" ("J5"); Footprint = "CON2_1X2_TU_TSW"; UniqueID = "\CJNMMNFI" ("\CJNMMNFI")
+Change component parameters (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/TSW-108-07-G-S/Samtec+Inc./view-part/?ref=eda"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MF"; Value = "Samtec Inc."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MP"; Value = "TSW-108-07-G-S"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/TSW-108-07-G-S/Samtec+Inc./view-part/?ref=snap"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetJ1_01 Pin=J1-06
+Added Pin To Net: NetName=NetJ2_01 Pin=J2-01
+Added Pin To Net: NetName=NetJ2_01 Pin=J3-01
+Added Net: Name=NetJ2_01
+Added Pin To Net: NetName=NetJ2_02 Pin=J2-02
+Added Pin To Net: NetName=NetJ2_02 Pin=J3-02
+Added Net: Name=NetJ2_02
+Added Pin To Net: NetName=NetJ2_03 Pin=J2-03
+Added Pin To Net: NetName=NetJ2_03 Pin=J3-03
+Added Net: Name=NetJ2_03
+Added Pin To Net: NetName=NetJ2_04 Pin=J2-04
+Added Pin To Net: NetName=NetJ2_04 Pin=J3-04
+Added Net: Name=NetJ2_04
+Added Pin To Net: NetName=NetJ2_05 Pin=J2-05
+Added Pin To Net: NetName=NetJ2_05 Pin=J3-05
+Added Net: Name=NetJ2_05
+Added Pin To Net: NetName=NetJ2_06 Pin=J2-06
+Added Pin To Net: NetName=NetJ2_06 Pin=J3-06
+Added Net: Name=NetJ2_06
+Added Pin To Net: NetName=NetJ2_07 Pin=J2-07
+Added Pin To Net: NetName=NetJ2_07 Pin=J3-07
+Added Net: Name=NetJ2_07
+Added Pin To Net: NetName=NetJ2_08 Pin=J2-08
+Added Pin To Net: NetName=NetJ2_08 Pin=J3-08
+Added Net: Name=NetJ2_08
+Added Pin To Net: NetName=NetJ4_01 Pin=J4-01
+Added Pin To Net: NetName=NetJ4_01 Pin=J5-01
+Added Net: Name=NetJ4_01
+Added Pin To Net: NetName=NetJ4_02 Pin=J4-02
+Added Pin To Net: NetName=NetJ4_02 Pin=J5-02
+Added Net: Name=NetJ4_02
+Added Pin To Net: NetName=NetJ4_03 Pin=J4-03
+Added Pin To Net: NetName=NetJ4_03 Pin=J5-03
+Added Net: Name=NetJ4_03
+Added Pin To Net: NetName=NetJ4_04 Pin=J4-04
+Added Pin To Net: NetName=NetJ4_04 Pin=J5-04
+Added Net: Name=NetJ4_04
+Added Pin To Net: NetName=NetJ4_05 Pin=J4-05
+Added Pin To Net: NetName=NetJ4_05 Pin=J5-05
+Added Net: Name=NetJ4_05
+Added Pin To Net: NetName=NetJ4_06 Pin=J4-06
+Added Pin To Net: NetName=NetJ4_06 Pin=J5-06
+Added Net: Name=NetJ4_06
+Added Pin To Net: NetName=NetJ4_07 Pin=J4-07
+Added Pin To Net: NetName=NetJ4_07 Pin=J5-07
+Added Net: Name=NetJ4_07
+Added Pin To Net: NetName=NetJ4_08 Pin=J4-08
+Added Pin To Net: NetName=NetJ4_08 Pin=J5-08
+Added Net: Name=NetJ4_08
+Added Member To Class: ClassName=top-board Member=Component R1 Resistor
