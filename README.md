@@ -28,3 +28,4 @@ This is a platform for discovering neuron-like elements in an arbitrary network 
  - [5 pin 0.1 inch header sockets](https://www.amazon.com/Dahszhi-Female-Header-2-54mm-Connector/dp/B0CTKDX7HC/)
  - [6 and 8 pin socket headers](https://www.amazon.com/Didamx-120Pcs-2-54MM-Stackable-arduino/dp/B074GQ9LKY/)
  - [16 pin DIP sockets](https://www.amazon.com/uxcell-Pieces-2-54mm-Double-Adapter/dp/B00O9YPVAM/)
+ - [1/4](https://www.digikey.com/en/products/detail/switchcraft-inc/SN37A12A/1288899)
