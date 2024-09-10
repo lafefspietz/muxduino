@@ -1,0 +1,22 @@
+Output: Gerber X2 Files
+Type  : GerberX2
+From  : Variant [[No Variations]] of Project [muxduino-shield.PrjPcb]
+   Generated File[muxduino-shield_Copper_Signal_Top.gbr]
+   Generated File[muxduino-shield_Copper_Signal_Bot.gbr]
+   Generated File[muxduino-shield_Legend_Top.gbr]
+   Generated File[muxduino-shield_Legend_Bot.gbr]
+   Generated File[muxduino-shield_Soldermask_Top.gbr]
+   Generated File[muxduino-shield_Soldermask_Bot.gbr]
+   Generated File[muxduino-shield_Paste_Top.gbr]
+   Generated File[muxduino-shield_Paste_Bot.gbr]
+   Generated File[muxduino-shield_Profile.gbr]
+   Generated File[muxduino-shield_NPTH_Drill.gbr]
+   Generated File[muxduino-shield_PTH_Drill.gbr]
+   Generated File[muxduino-shield.EXTREP]
+   Generated File[muxduino-shield.REP]
+
+
+Files Generated   : 13
+Documents Printed : 0
+
+Finished Output Generation At 3:43:17 PM On 9/10/2024
