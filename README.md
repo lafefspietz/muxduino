@@ -38,3 +38,33 @@ This is a platform for discovering neuron-like elements in an arbitrary network 
  - [6 and 8 pin socket headers](https://www.amazon.com/Didamx-120Pcs-2-54MM-Stackable-arduino/dp/B074GQ9LKY/)
  - [16 pin DIP sockets](https://www.amazon.com/uxcell-Pieces-2-54mm-Double-Adapter/dp/B00O9YPVAM/)
 
+# CAD Files
+
+## Libraries
+
+ - [pcb/SchlibLafe.SchLib](pcb/SchlibLafe.SchLib)
+ - [pcb/PcbLibLafe.PcbLib](pcb/PcbLibLafe.PcbLib)
+
+## muxduino-shield
+
+ - [pcb/muxduino-shield/muxduino-shield.PcbDoc](pcb/muxduino-shield/muxduino-shield.PcbDoc)
+ - [pcb/muxduino-shield/muxduino-shield.PrjPcb](pcb/muxduino-shield/muxduino-shield.PrjPcb)
+ - [pcb/muxduino-shield/muxduino-shield.PrjPcbStructure](pcb/muxduino-shield/muxduino-shield.PrjPcbStructure)
+ - [pcb/muxduino-shield/muxduino-shield.SchDoc](pcb/muxduino-shield/muxduino-shield.SchDoc)
+ - [pcb/muxduino-shield/muxduino-shield.step](pcb/muxduino-shield/muxduino-shield.step)
+
+## top-board
+
+ - [pcb/top-board/top-board.PcbDoc](pcb/top-board/top-board.PcbDoc)
+ - [pcb/top-board/top-board.PrjPcb](pcb/top-board/top-board.PrjPcb)
+ - [pcb/top-board/top-board.PrjPcbStructure](pcb/top-board/top-board.PrjPcbStructure)
+ - [pcb/top-board/top-board.SchDoc](pcb/top-board/top-board.SchDoc)
+ - [pcb/top-board/top-board.step](pcb/top-board/top-board.step)
+
+## Switch state
+
+The switch state is represented by an integer from 0 to 2^16-1 = 65535. This is a 16 bit number. We divide it into two bytes, the 8 bit input state and the 8 bit output state.  
+
+
+
+
