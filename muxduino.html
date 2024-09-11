@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+   <!--
+
+MUXDUINO
+
+
+   -->
+   <!--Stop Google:-->
+   <META NAME="robots" CONTENT="noindex,nofollow">
+   <title>MUXDUINO</title>    
+</head>
+<body>    
+
+
+<a href = "index.html">home</a>
+
+<table>
+    <tr>
+      <td>
+          state byte in decmial:
+      </td>  
+      <td>
+          <input id = "switchstateinput"/>
+      </td>
+    </tr>
+    <tr>
+        <td>total 16 bit state byte:</td>
+        <td>
+            <input id= "switchstateinputbinary"/>
+        </td>
+    </tr>
+    <tr>
+        <td>input 8 bit byte:</td>
+        <td>
+            <input id = "inputbyteinput"/>
+        </td>
+    </tr>
+    <tr>
+        <td>output 8 bit byte:</td>
+        <td>
+            <input id = "outputbyteinput"/>
+        </td>
+    </tr>
+
+</table>
+<table id = "controltable">
+    <tr>
+        <td Colspan="8" style = "text-align:center;width:100%">
+            <img style = "width:100%;" src= "https://mississippiriver.xyz/dirtwizard/geometron/symbolfeed/audioin.svg"/>        
+            </td>
+    </tr>
+    <tr id = "inputrow" class = "controlrow">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td Colspan="8" style = "text-align:center;width:100%">
+            <img style = "width:100%;" src= "https://mississippiriver.xyz/dirtwizard/geometron/symbolfeed/electrodes.svg"/>        
+        </td>
+    </tr>
+    <tr id = "outputrow" class = "controlrow">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td Colspan="8" style = "text-align:center;width:100%">
+            <img style = "width:100%;" src= "https://mississippiriver.xyz/dirtwizard/geometron/symbolfeed/audioout.svg"/>        
+            </td>
+    </tr>
+</table>
+<script>
+
+var httpc = new XMLHttpRequest();
+httpc.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        switchstate = parseInt(this.responseText);
+        display();
+    }
+};
+httpc.open("GET", "fileloader.php?filename=switchstate.txt", true);
+httpc.send();
+
+inputbitlights = document.getElementById("inputrow").getElementsByTagName("TD");
+outputbitlights = document.getElementById("outputrow").getElementsByTagName("TD");
+
+
+function display(){
+    
+    
+    var httpc = new XMLHttpRequest();
+    var url = "filesaver.php";        
+    httpc.open("POST", url, true);
+    httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+    httpc.send("data=" + switchstate.toString() + "&filename=switchstate.txt");//send text to filesaver.php
+    
+    bytestring = ((switchstate + 256*256).toString(2)).substring(1,17);
+    inputbytestring = bytestring.substring(0,8);
+    document.getElementById("inputbyteinput").value = inputbytestring;
+    outputbytestring = bytestring.substring(8,17);
+    document.getElementById("outputbyteinput").value = "              " + outputbytestring;
+    document.getElementById("switchstateinput").value = (switchstate).toString();
+    document.getElementById("switchstateinputbinary").value = ((switchstate + 256*256).toString(2)).substring(1,17);
+    
+    
+    
+    for(var index = 0;index < inputbytestring.length;index++){
+        if(inputbytestring.charAt(index) == '1'){
+            inputbitlights[index].style.backgroundColor = "purple";
+        }    
+        else{
+            inputbitlights[index].style.backgroundColor = "white";
+        }
+    }
+    for(var index = 0;index < outputbytestring.length;index++){
+        if(outputbytestring.charAt(index) == '1'){
+            outputbitlights[index].style.backgroundColor = "purple";
+        }    
+        else{
+            outputbitlights[index].style.backgroundColor = "white";
+        }
+    }
+    
+}
+
+
+
+for(var index = 0;index < 8;index++){
+    inputbitlights[index].id = "i" + index.toString();
+    outputbitlights[index].id = "o" + index.toString();
+    inputbitlights[index].onclick = function(){
+        bitindex = parseInt(this.id.substring(1));//
+        bitmask = 1 << (15 - bitindex);
+        switchstate ^= bitmask;//xor bitwise operator
+        display();
+//        alert("bitmask " + bitmask.toString());
+        
+    }
+    outputbitlights[index].onclick = function(){
+        bitindex = parseInt(this.id.substring(1));
+        bitmask = 1 << (7 - bitindex);
+        switchstate ^= bitmask;//xor bitwise operator
+        display();
+        //alert("bitmask " + bitmask.toString());
+        
+    }
+}
+
+
+
+</script>
+<style>
+.controlrow td{
+    border:solid;
+    cursor:pointer;
+    width:50px;
+    height:50px;
+    border-radius:10px;
+    border-width:5px;
+}
+
+</style>
+</body>
+</html>
+
+

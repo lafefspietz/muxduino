@@ -4,6 +4,8 @@
 
 This is a platform for discovering neuron-like elements in an arbitrary network of electrodes. 8 relays connect to the input side and 8 relays connect to the output side. This set of relays allows for 256x256 = 65,536 possible ways to connect the signals.  If we assume that there are neuron-like responses to be found in some combination of signal paths, we can hunt for these using software.  Algorithms can be developed to hunt for neuron-like behavior and can be improved over time.  
 
+## [muxduino.html](muxduino.html)
+
 [![](images/top-board-gerbers.png)](pcb/top-board-gerbers.zip)
 [![](images/top-board.png)](pcb/top-board-gerbers.zip)
 
