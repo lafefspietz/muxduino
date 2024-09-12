@@ -6,6 +6,8 @@ This is a platform for discovering neuron-like elements in an arbitrary network 
 
 ## [muxduino.html](muxduino.html)
 
+## [spectrum.html](spectrum.html)
+
 ## [muxduino.py](muxduino.py)
 
 ## [arduino/muxduino/muxduino.ino](arduino/muxduino/muxduino.ino)

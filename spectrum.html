@@ -1,0 +1,207 @@
+ <!doctype html>
+<html>
+<head>
+ <!-- 
+ 
+SINEOTRON
+
+-->
+
+<!--Stop Google:-->
+<META NAME="robots" CONTENT="noindex,nofollow">
+    
+    
+    <link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAP//AP///wANAP8A5Dz6ABueRwAAt/8A6BonABo86AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAREREREREREREREAAAEREREREQCIgREREd3dwAAB3d3d3d3d3d3d3d3d3d3d3d3d3VVVVVVVQAFVVAAVVVQIiBRAiIBEQIAIBECAAERAgAgFgIABmYCIiBmAiIGZgIiIGYCIgZmYCIAaIAAMzMzAAiIiIiIiIiIiIiIiIiIiIiIgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" rel="icon" type="image/x-icon" />
+    
+
+
+<script src="https://cdn.jsdelivr.net/npm/p5@1.7.0/lib/p5.js"></script>
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/addons/p5.sound.js"></script>
+
+
+        
+<title>SINEOTRON</title>
+
+</head>
+<body>
+    
+
+<a style = "font-size:4em" href = "index.html">HOME</a>
+
+<script>
+
+var mic,fft;
+filterFrequency = 1000;//Hz
+filterWidth = 100;//Hz
+gain = 1.5;
+
+// Array of amplitude values (-1 to +1) over time.
+
+squaresize = 512;
+margin = 100;
+noiseon = false;
+ 
+let noise;
+let filter;
+
+function setup() {
+
+  createCanvas(squaresize, squaresize);    
+  strokeWeight(2);  
+  background(128,128,128);
+  noFill();
+  stroke(0);
+
+
+  // set up various inputs. We'll toggle them when key "T" is pressed.
+  mic = new p5.AudioIn();
+  mic.start();
+  //analyzer.setInput(mic);
+    
+  fft = new p5.FFT();
+  fft.setInput(mic);
+
+  filter = new p5.BandPass();
+  noise = new p5.Noise();
+  noise.disconnect(); // Disconnect soundfile from master output...
+  filter.process(noise); // ...and connect to filter so we'll only hear BandPass.
+  noise.start();
+  noise.amp(5);
+  frameRate(16);
+  textSize(24);
+}
+
+
+frameIndex= 0;
+
+function draw(){
+  frameRate(16);
+
+
+  spectrum = fft.analyze();
+  nyquistFreq = sampleRate() / 2;
+  binFreq = nyquistFreq / (spectrum.length);
+
+  for (let i = 0; i < 128; i++) {
+    //stroke(spectrum[i]);
+        n = 256;
+        H = (spectrum[i]*gain)*360/(n);
+        z = 255*(1 - Math.abs((H/60)%2 - 1));
+    
+        if(H < 60){
+            red = 255;
+            green = Math.round(z);
+            blue = 0;
+        }
+        if(H >= 60 && H < 120){
+            red = Math.round(z);
+            green = 255;
+            blue = 0;
+        }
+        if(H >= 120 && H < 180){
+            red = 0;
+            green = 255;
+            blue = Math.round(z);
+        }
+        if(H >= 180 && H < 240){
+            red = 0;    
+            green = Math.round(z);
+            blue = 255;
+        }
+        if(H >= 240 && H < 300){
+            red = Math.round(z);    
+            green = 0;
+            blue = 255;
+        }
+        if(H >= 300 && H < 360){
+            red = 255;    
+            green = 0;
+            blue = Math.round(z);
+        }    
+    
+        if(spectrum[i] < 4){
+            stroke("#808080");        
+        }
+        else{
+            stroke('rgba(' + red + ',' + green + ',' + blue + ',' + spectrum[i]/10 + ')');        
+        }
+      strokeWeight(5); 
+      point(i*4,frameIndex*2);
+      stroke(0);
+      strokeWeight(1);
+      kHz = 4*Math.round(1000/binFreq);
+      line(kHz,0,kHz,height);
+      line(2*kHz,0,2*kHz,height);
+      line(3*kHz,0,3*kHz,height);
+      fill(0);
+      text("1 kHz",kHz+5,30);
+      text("2 kHz",2*kHz+5,30);
+    
+        
+      line(0,32*5,width,32*5);
+      text("5 sec",5,32*5 - 5);
+      line(0,2*32*5,width,2*32*5);
+      text("10 sec",5,2*32*5 - 5);
+      line(0,3*32*5,width,3*32*5);
+      text("15 sec",5,3*32*5 - 5);
+
+  }
+
+   if(mouseX > 1 && mouseX < width - 1 && mouseY > 1 && mouseY < height - 1){
+       filterFrequency = Math.round(1000*mouseX/kHz);
+       filterWidth = Math.round((filterFrequency*(height-mouseY)/height))/4;
+   }
+   else{
+       
+       //replace this with an algorithm to jump based on probabilities in a state vector
+       filterFrequency = 1000;
+       filterWidth = 200;
+   }
+   
+  filter.set(filterFrequency, filterWidth);
+  
+   frameIndex++;
+   if(frameIndex*2 > height){
+       frameIndex = 0;
+       background(128,128,128);
+
+       //background(255);
+   }
+    stroke(0);
+
+}
+
+document.body.onclick = function(){
+    if(noiseon == false){
+        noise.start();
+        noiseon = true;
+    }
+    else{
+        noise.stop();
+        noiseon = false;
+        
+    }
+}
+
+
+
+
+</script>
+<style>
+a{
+    color:blue;
+}
+body{
+    overflow:hidden;
+    font-family:Arial;
+}
+main{
+    position:absolute;
+    right:0px;
+    top:0px;
+}
+
+</style>
+
+</body>
+</html>
