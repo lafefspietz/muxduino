@@ -190,26 +190,26 @@ void loop() {
     // if you get a newline, print the string, then the string's value:
     if (inChar == '\n') {
       switchstate = inString.toInt();
-      Serial.println(inString);
+      //Serial.println(inString);
 
-      Serial.println("INPUTS:");
+     // Serial.println("INPUTS:");
       for(int index = 0;index < 8;index++){
         inputbits[index] = (switchstate>>(15-index))&1;       
       }
       for(int index = 0;index < 8;index++){
-        Serial.print(String(inputbits[index]));
+       // Serial.print(String(inputbits[index]));
       }
-      Serial.println();
-      Serial.println("OUTPUTS:");
+     // Serial.println();
+     // Serial.println("OUTPUTS:");
       for(int index = 0;index < 8;index++){
         outputbits[index] = (switchstate>>(7 - index))&1;       
       }
       for(int index = 0;index <8;index++){
-        Serial.print(String(outputbits[index]));
+       // Serial.print(String(outputbits[index]));
       }
 
 //      Serial.println((switchstate>>3)&1);
-      Serial.println();
+     // Serial.println();
       // clear the string for new input:
       inString = "";
     }

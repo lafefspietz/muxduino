@@ -49,7 +49,7 @@ MUXDUINO
 <table id = "controltable">
     <tr>
         <td Colspan="8" style = "text-align:center;width:100%">
-            <img style = "width:100%;" src= "https://mississippiriver.xyz/dirtwizard/geometron/symbolfeed/audioin.svg"/>        
+            <img style = "width:100%;" src= "images/audioin.svg"/>        
             </td>
     </tr>
     <tr id = "inputrow" class = "controlrow">
@@ -79,7 +79,7 @@ MUXDUINO
     </tr>
     <tr>
         <td Colspan="8" style = "text-align:center;width:100%">
-            <img style = "width:100%;" src= "https://mississippiriver.xyz/dirtwizard/geometron/symbolfeed/audioout.svg"/>        
+            <img style = "width:100%;" src= "images/audioout.svg"/>        
             </td>
     </tr>
 </table>
@@ -120,7 +120,7 @@ function display(){
     
     for(var index = 0;index < inputbytestring.length;index++){
         if(inputbytestring.charAt(index) == '1'){
-            inputbitlights[index].style.backgroundColor = "purple";
+            inputbitlights[index].style.backgroundColor = "red";
         }    
         else{
             inputbitlights[index].style.backgroundColor = "white";
@@ -128,7 +128,7 @@ function display(){
     }
     for(var index = 0;index < outputbytestring.length;index++){
         if(outputbytestring.charAt(index) == '1'){
-            outputbitlights[index].style.backgroundColor = "purple";
+            outputbitlights[index].style.backgroundColor = "blue";
         }    
         else{
             outputbitlights[index].style.backgroundColor = "white";

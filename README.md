@@ -10,6 +10,8 @@ This is a platform for discovering neuron-like elements in an arbitrary network 
 
 ## [arduino/muxduino/muxduino.ino](arduino/muxduino/muxduino.ino)
 
+## [geometron/](geometron/)
+
 [![](images/top-board-gerbers.png)](pcb/top-board-gerbers.zip)
 [![](images/top-board.png)](pcb/top-board-gerbers.zip)
 
@@ -71,6 +73,10 @@ This is a platform for discovering neuron-like elements in an arbitrary network 
 
 The switch state is represented by an integer from 0 to 2^16-1 = 65535. This is a 16 bit number. We divide it into two bytes, the 8 bit input state and the 8 bit output state.  
 
+## Jupyter Notebook in specific local folder
 
+```
+jupyter notebook --notebook-dir=c:\xampp\htdocs 
+```
 
 
