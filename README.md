@@ -6,6 +6,10 @@ This is a platform for discovering neuron-like elements in an arbitrary network 
 
 ## [muxduino.html](muxduino.html)
 
+## [muxduino.py](muxduino.py)
+
+## [arduino/muxduino/muxduino.ino](arduino/muxduino/muxduino.ino)
+
 [![](images/top-board-gerbers.png)](pcb/top-board-gerbers.zip)
 [![](images/top-board.png)](pcb/top-board-gerbers.zip)
 

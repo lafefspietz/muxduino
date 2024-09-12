@@ -214,24 +214,22 @@ void loop() {
       inString = "";
     }
   }
-
-  for(int index = 0;index < 8;index++){
-      if(outputbits[7 - index] == 1){
-          pixels.setPixelColor(index, pixels.Color(200, 0, 80));    
-      } 
-      else{
-          pixels.setPixelColor(index, pixels.Color(0, 0, 0));    
-      }   
-  }
   for(int index = 0;index < 8;index++){
       if(inputbits[7 - index] == 1){
-          pixels.setPixelColor(index + 8, pixels.Color(80, 0, 200));    
+          pixels.setPixelColor(index + 8, pixels.Color(255, 0, 0));    
       } 
       else{
           pixels.setPixelColor(index + 8, pixels.Color(0, 0, 0));    
       }   
   }
-
+  for(int index = 0;index < 8;index++){
+      if(outputbits[7 - index] == 1){
+          pixels.setPixelColor(index, pixels.Color(0, 0, 255));    
+      } 
+      else{
+          pixels.setPixelColor(index, pixels.Color(0, 0, 0));    
+      }   
+  }
   pixels.show();   // Send the updated pixel colors to the hardware.
   delay(1); // Pause before next pass through loop
 
