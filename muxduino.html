@@ -1,54 +1,32 @@
-<!doctype html>
-<html lang="en">
+ <!doctype html>
+<html>
 <head>
-   <meta charset="utf-8">
-   <!--
+ <!-- 
+ 
+SINEOTRON
 
-MUXDUINO
+-->
+
+<!--Stop Google:-->
+<META NAME="robots" CONTENT="noindex,nofollow">
+    
+    
+    <link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAP//AP///wANAP8A5Dz6ABueRwAAt/8A6BonABo86AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAREREREREREREREAAAEREREREQCIgREREd3dwAAB3d3d3d3d3d3d3d3d3d3d3d3d3VVVVVVVQAFVVAAVVVQIiBRAiIBEQIAIBECAAERAgAgFgIABmYCIiBmAiIGZgIiIGYCIgZmYCIAaIAAMzMzAAiIiIiIiIiIiIiIiIiIiIiIgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" rel="icon" type="image/x-icon" />
+    
 
 
-   -->
-   <!--Stop Google:-->
-   <META NAME="robots" CONTENT="noindex,nofollow">
-       <script src="https://cdn.jsdelivr.net/npm/p5@1.7.0/lib/p5.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/p5@1.7.0/lib/p5.js"></script>
 <script src = "https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/addons/p5.sound.js"></script>
 
-   <title>MUXDUINO</title>    
+
+        
+<title>NEUROMANCER</title>
+
 </head>
-<body>    
+<body>
+    
 
-
-<a href = "index.html">home</a>
-
-<table>
-    <tr>
-      <td>
-          state byte in decmial:
-      </td>  
-      <td>
-          <input id = "switchstateinput"/>
-      </td>
-    </tr>
-    <tr>
-        <td>total 16 bit state byte:</td>
-        <td>
-            <input id= "switchstateinputbinary"/>
-        </td>
-    </tr>
-    <tr>
-        <td>input 8 bit byte:</td>
-        <td>
-            <input id = "inputbyteinput"/>
-        </td>
-    </tr>
-    <tr>
-        <td>output 8 bit byte:</td>
-        <td>
-            <input id = "outputbyteinput"/>
-        </td>
-    </tr>
-
-</table>
+<a id = "homelink" style = "font-size:2em" href = "index.html">HOME</a>
 <table id = "controltable">
     <tr>
         <td Colspan="8" style = "text-align:center;width:100%">
@@ -86,7 +64,13 @@ MUXDUINO
             </td>
     </tr>
 </table>
+<div id = "onoffbutton">NOISE ON/OFF</div>
+
 <script>
+
+inputswitchprobs = [0.125,0.125,0.125,0.125,0.125,0.125,0.125,0.125];
+outputswitchprobs = [0.125,0.125,0.125,0.125,0.125,0.125,0.125,0.125];
+
 
 var httpc = new XMLHttpRequest();
 httpc.onreadystatechange = function() {
@@ -101,7 +85,6 @@ httpc.send();
 inputbitlights = document.getElementById("inputrow").getElementsByTagName("TD");
 outputbitlights = document.getElementById("outputrow").getElementsByTagName("TD");
 
-
 function display(){
     
     
@@ -113,12 +96,9 @@ function display(){
     
     bytestring = ((switchstate + 256*256).toString(2)).substring(1,17);
     inputbytestring = bytestring.substring(0,8);
-    document.getElementById("inputbyteinput").value = inputbytestring;
+
     outputbytestring = bytestring.substring(8,17);
-    document.getElementById("outputbyteinput").value = "              " + outputbytestring;
-    document.getElementById("switchstateinput").value = (switchstate).toString();
-    document.getElementById("switchstateinputbinary").value = ((switchstate + 256*256).toString(2)).substring(1,17);
-    
+
     
     
     for(var index = 0;index < inputbytestring.length;index++){
@@ -165,8 +145,212 @@ for(var index = 0;index < 8;index++){
 
 
 
+var mic,fft;
+filterFrequency = 1000;//Hz
+filterWidth = 100;//Hz
+gain = 1.5;
+
+// Array of amplitude values (-1 to +1) over time.
+
+squaresize = 512;
+margin = 100;
+noiseon = false;
+ 
+let noise;
+let filter;
+
+fmax = 1000;
+pmax = 1;
+psum = 1;
+
+pfjson = {};
+pfjson.fmaxvector = [];
+pfjson.psumvector = [];
+pfjson.pmaxvector = [];
+
+
+
+function setup() {
+
+  createCanvas(squaresize, squaresize);    
+  strokeWeight(2);  
+  background(128,128,128);
+  noFill();
+  stroke(0);
+
+
+  // set up various inputs. We'll toggle them when key "T" is pressed.
+  mic = new p5.AudioIn();
+  mic.start();
+  //analyzer.setInput(mic);
+    
+  fft = new p5.FFT();
+  fft.setInput(mic);
+
+  filter = new p5.BandPass();
+  noise = new p5.Noise();
+  noise.disconnect(); // Disconnect soundfile from master output...
+  filter.process(noise); // ...and connect to filter so we'll only hear BandPass.
+  //noise.start();
+  noise.amp(5);
+  frameRate(16);
+  textSize(24);
+}
+
+
+frameIndex= 0;
+
+function draw(){
+  frameRate(16);
+
+
+  spectrum = fft.analyze();
+  nyquistFreq = sampleRate() / 2;
+  binFreq = nyquistFreq / (spectrum.length);
+  kHz = 4*Math.round(1000/binFreq);
+
+  pmax = 0;
+  psum = 0;
+  for (let i = 0; i < 128; i++) {
+      psum += spectrum[i]*spectrum[i];
+      if(spectrum[i]*spectrum[i] > pmax){
+          pmax = spectrum[i]*spectrum[i];
+          fmax = Math.round(4*1000*i/kHz);
+      }
+    //stroke(spectrum[i]);
+        n = 256;
+        H = (spectrum[i]*gain)*360/(n);
+        z = 255*(1 - Math.abs((H/60)%2 - 1));
+    
+        if(H < 60){
+            red = 255;
+            green = Math.round(z);
+            blue = 0;
+        }
+        if(H >= 60 && H < 120){
+            red = Math.round(z);
+            green = 255;
+            blue = 0;
+        }
+        if(H >= 120 && H < 180){
+            red = 0;
+            green = 255;
+            blue = Math.round(z);
+        }
+        if(H >= 180 && H < 240){
+            red = 0;    
+            green = Math.round(z);
+            blue = 255;
+        }
+        if(H >= 240 && H < 300){
+            red = Math.round(z);    
+            green = 0;
+            blue = 255;
+        }
+        if(H >= 300 && H < 360){
+            red = 255;    
+            green = 0;
+            blue = Math.round(z);
+        }    
+    
+        if(spectrum[i] < 4){
+            stroke("#808080");        
+        }
+        else{
+            stroke('rgba(' + red + ',' + green + ',' + blue + ',' + spectrum[i]/10 + ')');        
+        }
+      strokeWeight(5); 
+      point(i*4,frameIndex*2);
+      stroke(0);
+      strokeWeight(1);
+      line(kHz,0,kHz,height);
+      line(2*kHz,0,2*kHz,height);
+      line(3*kHz,0,3*kHz,height);
+      fill(0);
+      text("1 kHz",kHz+5,30);
+      text("2 kHz",2*kHz+5,30);
+    
+        
+      line(0,32*5,width,32*5);
+      text("5 sec",5,32*5 - 5);
+      line(0,2*32*5,width,2*32*5);
+      text("10 sec",5,2*32*5 - 5);
+      line(0,3*32*5,width,3*32*5);
+      text("15 sec",5,3*32*5 - 5);
+
+  }
+  pfjson.pmaxvector.push(pmax);
+  pfjson.fmaxvector.push(fmax);
+  pfjson.psumvector.push(psum);
+
+   if(mouseX > 1 && mouseX < width - 1 && mouseY > 1 && mouseY < height - 1){
+       filterFrequency = Math.round(1000*mouseX/kHz);
+       filterWidth = Math.round((filterFrequency*(height-mouseY)/height))/4;
+   }
+   else{
+       
+       //replace this with an algorithm to jump based on probabilities in a state vector
+       filterFrequency = 1000;
+       filterWidth = 200;
+   }
+   
+  filter.set(filterFrequency, filterWidth);
+  
+   frameIndex++;
+   if(frameIndex*2 > height){
+       frameIndex = 0;
+       background(128,128,128);
+       
+        var url = "filesaver.php";        
+        var httpc666 = new XMLHttpRequest();
+        httpc666.open("POST", url, true);
+        httpc666.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        httpc666.send("data="+encodeURIComponent(JSON.stringify(pfjson,null,"    "))+"&filename=pfjson.txt");//send text to filesaver.php
+
+       pfjson.fmaxvector = [];
+       pfjson.psumvector = [];
+       pfjson.pmaxvector = [];
+       //background(255);
+   }
+    stroke(-2);
+
+}
+
+document.getElementById("onoffbutton").onclick = function(){
+    if(noiseon == false){
+        noise.start();
+        noiseon = true;
+    }
+    else{
+        noise.stop();
+        noiseon = false;
+        
+    }
+}
+
+
+
+
 </script>
 <style>
+a{
+    color:blue;
+}
+body{
+    overflow:hidden;
+    font-family:Arial;
+}
+main{
+    position:absolute;
+    right:0px;
+    top:0px;
+}
+#controltable{
+    position:absolute;
+    left:0px;
+    top:0px;
+    z-index:-1;
+}
 .controlrow td{
     border:solid;
     cursor:pointer;
@@ -175,9 +359,31 @@ for(var index = 0;index < 8;index++){
     border-radius:10px;
     border-width:5px;
 }
-
+#onoffbutton{
+    border:solid;
+    border-radius:5px;
+    text-align:center;
+    font-size:36px;
+    cursor:pointer;
+    position:absolute;
+    right:5px;
+    bottom:5px;
+}
+#onoffbutton:hover{
+    background-color:green;
+}
+#onoffbutton:active{
+    background-color:yellow;
+}
+img{
+    max-width:500px;
+}
+#homelink{
+    position:absolute;
+    right:520px;
+    top:5px;
+}
 </style>
+
 </body>
 </html>
-
-

@@ -20,15 +20,126 @@ SINEOTRON
 
 
         
-<title>SINEOTRON</title>
+<title>NEUROMANCER</title>
 
 </head>
 <body>
     
 
 <a style = "font-size:4em" href = "index.html">HOME</a>
+<table id = "controltable">
+    <tr>
+        <td Colspan="8" style = "text-align:center;width:100%">
+            <img style = "width:100%;" src= "images/audioin.svg"/>        
+            </td>
+    </tr>
+    <tr id = "inputrow" class = "controlrow">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td Colspan="8" style = "text-align:center;width:100%">
+            <img style = "width:100%;" src= "https://mississippiriver.xyz/dirtwizard/geometron/symbolfeed/electrodes.svg"/>        
+        </td>
+    </tr>
+    <tr id = "outputrow" class = "controlrow">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td Colspan="8" style = "text-align:center;width:100%">
+            <img style = "width:100%;" src= "images/audioout.svg"/>        
+            </td>
+    </tr>
+</table>
+<div id = "onoffbutton">NOISE ON/OFF</div>
 
 <script>
+
+var httpc = new XMLHttpRequest();
+httpc.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        switchstate = parseInt(this.responseText);
+        display();
+    }
+};
+httpc.open("GET", "fileloader.php?filename=switchstate.txt", true);
+httpc.send();
+
+inputbitlights = document.getElementById("inputrow").getElementsByTagName("TD");
+outputbitlights = document.getElementById("outputrow").getElementsByTagName("TD");
+
+function display(){
+    
+    
+    var httpc = new XMLHttpRequest();
+    var url = "filesaver.php";        
+    httpc.open("POST", url, true);
+    httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+    httpc.send("data=" + switchstate.toString() + "&filename=switchstate.txt");//send text to filesaver.php
+    
+    bytestring = ((switchstate + 256*256).toString(2)).substring(1,17);
+    inputbytestring = bytestring.substring(0,8);
+
+    outputbytestring = bytestring.substring(8,17);
+
+    
+    
+    for(var index = 0;index < inputbytestring.length;index++){
+        if(inputbytestring.charAt(index) == '1'){
+            inputbitlights[index].style.backgroundColor = "red";
+        }    
+        else{
+            inputbitlights[index].style.backgroundColor = "white";
+        }
+    }
+    for(var index = 0;index < outputbytestring.length;index++){
+        if(outputbytestring.charAt(index) == '1'){
+            outputbitlights[index].style.backgroundColor = "blue";
+        }    
+        else{
+            outputbitlights[index].style.backgroundColor = "white";
+        }
+    }
+    
+}
+
+
+
+for(var index = 0;index < 8;index++){
+    inputbitlights[index].id = "i" + index.toString();
+    outputbitlights[index].id = "o" + index.toString();
+    inputbitlights[index].onclick = function(){
+        bitindex = parseInt(this.id.substring(1));//
+        bitmask = 1 << (15 - bitindex);
+        switchstate ^= bitmask;//xor bitwise operator
+        display();
+//        alert("bitmask " + bitmask.toString());
+        
+    }
+    outputbitlights[index].onclick = function(){
+        bitindex = parseInt(this.id.substring(1));
+        bitmask = 1 << (7 - bitindex);
+        switchstate ^= bitmask;//xor bitwise operator
+        display();
+        //alert("bitmask " + bitmask.toString());
+        
+    }
+}
+
+
 
 var mic,fft;
 filterFrequency = 1000;//Hz
@@ -65,7 +176,7 @@ function setup() {
   noise = new p5.Noise();
   noise.disconnect(); // Disconnect soundfile from master output...
   filter.process(noise); // ...and connect to filter so we'll only hear BandPass.
-  noise.start();
+  //noise.start();
   noise.amp(5);
   frameRate(16);
   textSize(24);
@@ -167,11 +278,11 @@ function draw(){
 
        //background(255);
    }
-    stroke(0);
+    stroke(-2);
 
 }
 
-document.body.onclick = function(){
+document.getElementById("onoffbutton").onclick = function(){
     if(noiseon == false){
         noise.start();
         noiseon = true;
@@ -199,6 +310,30 @@ main{
     position:absolute;
     right:0px;
     top:0px;
+}
+.controlrow td{
+    border:solid;
+    cursor:pointer;
+    width:50px;
+    height:50px;
+    border-radius:10px;
+    border-width:5px;
+}
+#onoffbutton{
+    border:solid;
+    border-radius:5px;
+    text-align:center;
+    font-size:36px;
+    cursor:pointer;
+    position:absolute;
+    right:0px;
+    bottom:0px;
+}
+#onoffbutton:hover{
+    background-color:green;
+}
+#onoffbutton:active{
+    background-color:yellow;
 }
 
 </style>

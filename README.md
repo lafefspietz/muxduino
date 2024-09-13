@@ -6,13 +6,15 @@ This is a platform for discovering neuron-like elements in an arbitrary network 
 
 ## [muxduino.html](muxduino.html)
 
-## [spectrum.html](spectrum.html)
+![](images/screenshot.png)
 
 ## [muxduino.py](muxduino.py)
 
 ## [arduino/muxduino/muxduino.ino](arduino/muxduino/muxduino.ino)
 
 ## [geometron/](geometron/)
+
+## [webeditor.html](webeditor.html)
 
 [![](images/top-board-gerbers.png)](pcb/top-board-gerbers.zip)
 [![](images/top-board.png)](pcb/top-board-gerbers.zip)

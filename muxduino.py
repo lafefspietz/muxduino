@@ -1,3 +1,5 @@
+# open a anaconda prompt, move to c:\xampp\htdocs\muxduino and type
+# python muxduino.py
 import time
 import serial
 import os
