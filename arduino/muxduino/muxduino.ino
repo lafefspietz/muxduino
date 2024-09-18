@@ -34,10 +34,10 @@ Adafruit_NeoPixel pixels(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
 #define input7 7
 #define input8 6
 
-#define output1 14
-#define output2 15
-#define output3 16
-#define output4 17
+#define output1 17//this set of 4 pins{17,16,15,14} are reversed from what the silk screen says
+#define output2 16
+#define output3 15
+#define output4 14
 #define output5 4
 #define output6 3
 #define output7 2
