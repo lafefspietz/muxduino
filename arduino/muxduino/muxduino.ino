@@ -13,7 +13,7 @@
 // A5 maps to 19 on the UNO and 59 on the Mega  
 
 //#define PIN 59 // MEGA 
-#define PIN 6 // UNO
+#define PIN 5 // UNO
 
 // How many NeoPixels are attached to the Arduino?
 #define NUMPIXELS 16 // 
@@ -216,18 +216,18 @@ void loop() {
   }
   for(int index = 0;index < 8;index++){
       if(inputbits[7 - index] == 1){
-          pixels.setPixelColor(index + 8, pixels.Color(255, 0, 0));    
+          pixels.setPixelColor(index, pixels.Color(255, 0, 0));    
       } 
       else{
-          pixels.setPixelColor(index + 8, pixels.Color(0, 0, 0));    
+          pixels.setPixelColor(index, pixels.Color(0, 0, 0));    
       }   
   }
   for(int index = 0;index < 8;index++){
       if(outputbits[7 - index] == 1){
-          pixels.setPixelColor(index, pixels.Color(0, 0, 255));    
+          pixels.setPixelColor(index +8, pixels.Color(0, 0, 255));    
       } 
       else{
-          pixels.setPixelColor(index, pixels.Color(0, 0, 0));    
+          pixels.setPixelColor(index + 8, pixels.Color(0, 0, 0));    
       }   
   }
   pixels.show();   // Send the updated pixel colors to the hardware.

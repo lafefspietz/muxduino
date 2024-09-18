@@ -3,7 +3,7 @@
 import time
 import serial
 import os
-ser = serial.Serial('COM4', 9600)
+ser = serial.Serial('COM16', 9600)
 while True:
     f = open("switchstate.txt", "r")
     switchstatestring = f.read()
