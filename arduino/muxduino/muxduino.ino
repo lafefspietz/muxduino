@@ -9,15 +9,12 @@
 #endif
 
 // Which pin on the Arduino is connected to the NeoPixels?
-// It is very important to change this based on if you have a Mega or UNO, since the A5 pin maps to different digital output pins
-// A5 maps to 19 on the UNO and 59 on the Mega  
 
-//#define PIN 59 // MEGA 
 #define PIN 5 // UNO
 
 // How many NeoPixels are attached to the Arduino?
 #define NUMPIXELS 16 // 
-//there are 6
+//there are 16
 
 // When setting up the NeoPixel library, we tell it how many pixels,  
 // and which pin to use to send signals. Note that for older NeoPixel
@@ -49,7 +46,14 @@ Adafruit_NeoPixel pixels(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
 int inputbits[8] = {0,0,0,0,0,0,0,0};
 int outputbits[8] = {0,0,0,0,0,0,0,0};
 
-int analog = 0;// variable which reads out the analog input from the button ladder
+int buttonlevels[8] = {1023,823,665,536,424,321,220,114};
+
+
+int inputbuttons = 0;// variable which reads out the analog input from the button ladder
+int outputbuttons = 0;// variable which reads out the analog input from the button ladder
+int inputbuttonsprev = 0;
+int outputbuttonsprev = 0;
+
 int delta = 20;//the acceptable difference between an analog value and an expected button state value
 int mode = 1;//modes are 1,2,3,4,5,6 which are pixel 5,4,3,2,1, and 0 respectively, mode 0 is off, mode -1 is color cycle with all switches off
 int cycle = 0;//variable for cycling colors as test pattern with switch off
@@ -62,7 +66,6 @@ void setup() {
 
     //Set all bits to digital output mode:
 
-/*
     pinMode(input1,OUTPUT);
     pinMode(input2,OUTPUT);
     pinMode(input3,OUTPUT);
@@ -72,14 +75,14 @@ void setup() {
     pinMode(input7,OUTPUT);
     pinMode(input8,OUTPUT);
 
-    pinMode(ouput1,OUTPUT);
-    pinMode(ouput2,OUTPUT);
-    pinMode(ouput3,OUTPUT);
-    pinMode(ouput4,OUTPUT);
-    pinMode(ouput5,OUTPUT);
-    pinMode(ouput6,OUTPUT);
-    pinMode(ouput7,OUTPUT);
-    pinMode(ouput8,OUTPUT);
+    pinMode(output1,OUTPUT);
+    pinMode(output2,OUTPUT);
+    pinMode(output3,OUTPUT);
+    pinMode(output4,OUTPUT);
+    pinMode(output5,OUTPUT);
+    pinMode(output6,OUTPUT);
+    pinMode(output7,OUTPUT);
+    pinMode(output8,OUTPUT);
 
     //set all pins low to start off with
     digitalWrite(input1,LOW);
@@ -98,7 +101,6 @@ void setup() {
     digitalWrite(output6,LOW);
     digitalWrite(output7,LOW);
     digitalWrite(output8,LOW);
-  */
 
   pixels.begin(); // INITIALIZE NeoPixel strip object (REQUIRED)
 
@@ -121,65 +123,151 @@ void loop() {
   //  is connected to the analog pin, which tests which button is pressed.
   // We check again after a milisecond to make sure the button state 
   // is stable and is not part of a transient signal.
+  
+inputbuttons = analogRead(A5);//read the analog voltage from the button ladder
+outputbuttons = analogRead(A4);//read the analog voltage from the button ladder
 
-/*
-  analog = analogRead(A4);//read the analog voltage from the button ladder
+if(inputbuttonsprev == 0){
 
-  if(analog > 1024 - delta){
+  if(inputbuttons > buttonlevels[0] - delta){
     delay(1);
-    analog = analogRead(A4);
-    if(analog > 1023 - delta){
-       mode = 1;      
+    inputbuttons = analogRead(A5);
+    if(inputbuttons > buttonlevels[0] - delta){
+        inputbits[0] = !inputbits[0];
     }
   }
-  if(analog > 784 - delta && analog < 784 + delta){
-    delay(5);
-    analog = analogRead(A4);
-    if(analog > 784 - delta && analog < 784 + delta){
-         mode = 2; 
+  if(inputbuttons > buttonlevels[1] - delta && inputbuttons < buttonlevels[1] + delta){
+    delay(1);
+    inputbuttons = analogRead(A5);
+    if(inputbuttons > buttonlevels[1] - delta && inputbuttons < buttonlevels[1] + delta){
+        inputbits[1] = !inputbits[1];
     }
   }
-  if(analog > 596 - delta && analog < 596 + delta){
-     delay(5);
-     analog = analogRead(A4);
-
-    if(analog > 596 - delta && analog < 596 + delta){
-      mode = 3;    
-    }
-  }
-
-  if(analog > 437 - delta && analog < 437 + delta){
+  if(inputbuttons > buttonlevels[2] - delta && inputbuttons < buttonlevels[2] + delta){
      delay(1);
-     analog = analogRead(A4);
-
-    if(analog > 437 - delta && analog < 437 + delta){
-      mode = 4;    
+     inputbuttons = analogRead(A5);
+    if(inputbuttons > buttonlevels[2] - delta && inputbuttons < buttonlevels[2] + delta){
+        inputbits[2] = !inputbits[2];
     }
   }
 
-  if(analog > 290 - delta && analog < 290 + delta){
+  if(inputbuttons > buttonlevels[3] - delta && inputbuttons < buttonlevels[3] + delta){
      delay(1);
-     analog = analogRead(A4);
+     inputbuttons = analogRead(A5);
 
-    if(analog > 290 - delta && analog < 290 + delta){
-      mode = 5;    
+    if(inputbuttons > buttonlevels[3] - delta && inputbuttons < buttonlevels[3] + delta){
+        inputbits[3] = !inputbits[3];
     }
   }
 
-  if(analog > 158 - delta && analog < 158 + delta){
+  if(inputbuttons > buttonlevels[4] - delta && inputbuttons < buttonlevels[4] + delta){
      delay(1);
-     analog = analogRead(A4);
+     inputbuttons = analogRead(A5);
 
-    if(analog > 158 - delta && analog < 158 + delta){
-      mode = 6;    
+    if(inputbuttons > buttonlevels[4] - delta && inputbuttons < buttonlevels[4] + delta){
+        inputbits[4] = !inputbits[4];
     }
   }
 
-  if(analog > 188 - delta && analog < 188 + delta){
-     analog = analogRead(A4);
-     mode = -1;    
+  if(inputbuttons > buttonlevels[5] - delta && inputbuttons < buttonlevels[5] + delta){
+     delay(1);
+     inputbuttons = analogRead(A5);
+
+    if(inputbuttons > buttonlevels[5] - delta && inputbuttons < buttonlevels[5] + delta){
+        inputbits[5] = !inputbits[5];
+    }
   }
-*/
+
+  if(inputbuttons > buttonlevels[6] - delta && inputbuttons < buttonlevels[6] + delta){
+     delay(1);
+     inputbuttons = analogRead(A5);
+
+    if(inputbuttons > buttonlevels[6] - delta && inputbuttons < buttonlevels[6] + delta){
+        inputbits[6] = !inputbits[6];
+    }
+  }
+
+  if(inputbuttons > buttonlevels[7] - delta && inputbuttons < buttonlevels[7] + delta){
+     delay(1);
+     inputbuttons = analogRead(A5);
+    if(inputbuttons > buttonlevels[7] - delta && inputbuttons < buttonlevels[7] + delta){
+        inputbits[7] = !inputbits[7];
+    }
+  }
+}
+
+if(outputbuttonsprev == 0){
+  if(outputbuttons > buttonlevels[0] - delta){
+    delay(1);
+    outputbuttons = analogRead(A4);
+    if(outputbuttons > buttonlevels[0] - delta){
+        outputbits[0] = !outputbits[0];
+    }
+  }
+  if(outputbuttons > buttonlevels[1] - delta && outputbuttons < buttonlevels[1] + delta){
+    delay(1);
+    outputbuttons = analogRead(A4);
+    if(outputbuttons > buttonlevels[1] - delta && outputbuttons < buttonlevels[1] + delta){
+        outputbits[1] = !outputbits[1];
+    }
+  }
+  if(outputbuttons > buttonlevels[2] - delta && outputbuttons < buttonlevels[2] + delta){
+     delay(1);
+     outputbuttons = analogRead(A4);
+    if(outputbuttons > buttonlevels[2] - delta && outputbuttons < buttonlevels[2] + delta){
+        outputbits[2] = !outputbits[2];
+    }
+  }
+
+  if(outputbuttons > buttonlevels[3] - delta && outputbuttons < buttonlevels[3] + delta){
+     delay(1);
+     outputbuttons = analogRead(A4);
+
+    if(outputbuttons > buttonlevels[3] - delta && outputbuttons < buttonlevels[3] + delta){
+        outputbits[3] = !outputbits[3];
+    }
+  }
+
+  if(outputbuttons > buttonlevels[4] - delta && outputbuttons < buttonlevels[4] + delta){
+     delay(1);
+     outputbuttons = analogRead(A4);
+
+    if(outputbuttons > buttonlevels[4] - delta && outputbuttons < buttonlevels[4] + delta){
+        outputbits[4] = !outputbits[4];
+    }
+  }
+
+  if(outputbuttons > buttonlevels[5] - delta && outputbuttons < buttonlevels[5] + delta){
+     delay(1);
+     outputbuttons = analogRead(A4);
+
+    if(outputbuttons > buttonlevels[5] - delta && outputbuttons < buttonlevels[5] + delta){
+        outputbits[5] = !outputbits[5];
+    }
+  }
+
+  if(outputbuttons > buttonlevels[6] - delta && outputbuttons < buttonlevels[6] + delta){
+     delay(1);
+     outputbuttons = analogRead(A4);
+
+    if(outputbuttons > buttonlevels[6] - delta && outputbuttons < buttonlevels[6] + delta){
+        outputbits[6] = !outputbits[6];
+    }
+  }
+
+  if(outputbuttons > buttonlevels[7] - delta && outputbuttons < buttonlevels[7] + delta){
+     delay(1);
+     outputbuttons = analogRead(A4);
+    if(outputbuttons > buttonlevels[7] - delta && outputbuttons < buttonlevels[7] + delta){
+        outputbits[7] = !outputbits[7];
+    }
+  }
+}
+
+inputbuttonsprev = inputbuttons;
+outputbuttonsprev = outputbuttons;
+
+
 //switchstate = 0;
  while (Serial.available() > 0) {
     int inChar = Serial.read();
@@ -214,6 +302,7 @@ void loop() {
       inString = "";
     }
   }
+
   for(int index = 0;index < 8;index++){
       if(inputbits[7 - index] == 1){
           pixels.setPixelColor(index, pixels.Color(255, 0, 0));    
@@ -231,6 +320,24 @@ void loop() {
       }   
   }
   pixels.show();   // Send the updated pixel colors to the hardware.
+
+    digitalWrite(input1,inputbits[0]);
+    digitalWrite(input2,inputbits[1]);
+    digitalWrite(input3,inputbits[2]);
+    digitalWrite(input4,inputbits[3]);
+    digitalWrite(input5,inputbits[4]);
+    digitalWrite(input6,inputbits[5]);
+    digitalWrite(input7,inputbits[6]);
+    digitalWrite(input8,inputbits[7]);
+    digitalWrite(output1,outputbits[0]);
+    digitalWrite(output2,outputbits[1]);
+    digitalWrite(output3,outputbits[2]);
+    digitalWrite(output4,outputbits[3]);
+    digitalWrite(output5,outputbits[4]);
+    digitalWrite(output6,outputbits[5]);
+    digitalWrite(output7,outputbits[6]);
+    digitalWrite(output8,outputbits[7]);
+
   delay(1); // Pause before next pass through loop
 
  
